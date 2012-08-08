@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Contact Plug-in
+Bundle-SymbolicName: gr.osmosis.rcpsamples.contact; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: gr.osmosis.rcpsamples.contact.ContactPlugin
+Bundle-Localization: plugin
+Eclipse-AutoStart: true
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms
+Import-Package: org.apache.commons.dbutils,
+ org.apache.derby.jdbc
+

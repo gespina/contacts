@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="gr.osmosis.rcpsamples.contact.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="Perspective"
+            class="gr.osmosis.rcpsamples.contact.Perspective"
+            id="gr.osmosis.rcpsamples.contact.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="gr.osmosis.rcpsamples.contact.View"
+            icon="icons/com.linuxcult/crystal/16x16/apps/gif/kuser.gif"
+            id="gr.osmosis.rcpsamples.contact.view"
+            name="View">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="gr.osmosis.rcpsamples.contact.Editor"
+            default="false"
+            icon="icons/com.linuxcult/crystal/16x16/apps/gif/personal.gif"
+            id="gr.osmosis.rcpsamples.contact.editor"
+            name="Contact Editor"/>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="gr.osmosis.rcpsamples.contact.application"
+            name="Contact RCP">
+         <property
+               name="aboutImage"
+               value="icons/kpresenter.gif"/>
+         <property
+               name="aboutText"
+               value="Contact - RCP Application&#x0A;http://sourceforge.net/projects/contactrcp/&#x0A;&#x0A;Stavros S. Kounis &#x0A;http://tools.osmosis.gr/blog&#x0A;mailto:skounis@gmail.com"/>
+         <property
+               name="windowImages"
+               value="icons/kpresenter.gif"/>
+         <property
+               name="appName"
+               value="Contact RCP">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="gr.osmosis.rcpsamples.contact.viewactions"
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="gr.osmosis.rcpsamples.contact.contactsViewContribution"
+            targetID="gr.osmosis.rcpsamples.contact.view">
+         <action
+               class="gr.osmosis.rcpsamples.contact.actions.RefreshContactsViewActionDelegate"
+               icon="icons/com.linuxcult/crystal/16x16/actions/gif/reload3.gif"
+               id="gr.osmosis.rcpsamples.contact.refreshAction"
+               label="Refresh"
+               menubarPath="actions"
+               style="push"
+               toolbarPath="actions"/>
+         <action
+               class="gr.osmosis.rcpsamples.contact.actions.DeleteContactViewActionDelegate"
+               icon="icons/org.eclipse.ui/icons/full/etool16/delete_edit.gif"
+               id="gr.osmosis.rcpsamples.contact.DeleteAction"
+               label="Delete"
+               menubarPath="actions"
+               style="push"
+               toolbarPath="actions"/>
+         <action
+               class="gr.osmosis.rcpsamples.contact.actions.AddDemoDataViewActionDelegate"
+               icon="icons/org.eclipse.ui.ide/icons/full/etool16/import_wiz.gif"
+               id="gr.osmosis.rcpsamples.contact.AddDemoDataAction"
+               label="Add demo data (contacts)"
+               menubarPath="demo"
+               style="push"
+               toolbarPath="demo"/>
+         <action
+               class="gr.osmosis.rcpsamples.contact.actions.NewContactViewActionDelegate"
+               icon="icons/com.linuxcult/crystal/16x16/apps/gif/personal.gif"
+               id="gr.osmosis.rcpsamples.contact.NewAction"
+               label="New contact"
+               menubarPath="actions"
+               style="push"
+               toolbarPath="actions"/>
+      </viewContribution>
+   </extension>
+
+</plugin>
